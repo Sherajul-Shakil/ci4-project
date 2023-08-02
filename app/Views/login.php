@@ -17,14 +17,15 @@
                 <form class="" action="<?= base_url('login') ?>" method="post">
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" name="email" id="email">
+                        <!-- <input type="email" class="form-control" name="email" id="email"> -->
+                        <input type="email" class="form-control" name="email" id="email" value="<?= isset($_POST['email']) ? $_POST['email'] : '' ?>">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" name="password" id="password">
+                        <input type="password" class="form-control" name="password" id="password" value="<?= isset($_POST['password']) ? $_POST['password'] : '' ?>">
                     </div>
                     <button type="submit" class="btn btn-success">Submit</button>
-                    <a href="<?= base_url('register') ?>" class="btn btn-primary">Go to Registration</a>
+                    <a href="<?= base_url('register') ?>" class="btn btn-primary">Go to Register</a>
                 </form>
             </div>
         </div>

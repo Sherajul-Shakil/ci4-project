@@ -17,15 +17,18 @@
                 <form class="" action="<?= base_url('register') ?>" method="post">
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" class="form-control" name="name" id="name">
+                        <!-- Use the $_POST array to retrieve form value for name input -->
+                        <input type="text" class="form-control" name="name" id="name" value="<?= isset($_POST['name']) ? $_POST['name'] : '' ?>">
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" name="email" id="email">
+                        <!-- Use the $_POST array to retrieve form value for email input -->
+                        <input type="email" class="form-control" name="email" id="email" value="<?= isset($_POST['email']) ? $_POST['email'] : '' ?>">
                     </div>
                     <div class="form-group">
                         <label for="phone_no">Phone No</label>
-                        <input type="text" class="form-control" name="phone_no" id="phone_no">
+                        <!-- Use the $_POST array to retrieve form value for phone_no input -->
+                        <input type="text" class="form-control" name="phone_no" id="phone_no" value="<?= isset($_POST['phone_no']) ? $_POST['phone_no'] : '' ?>">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>

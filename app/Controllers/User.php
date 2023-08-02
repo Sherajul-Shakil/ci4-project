@@ -12,6 +12,11 @@ class User extends BaseController
         $data = [];
 
         if ($this->request->getMethod() == 'post') {
+            // $allD = $this->request->getVar();
+            // echo "<pre>";
+            // print_r($allD);
+            // die();
+
 
             $rules = [
                 'email' => 'required|min_length[6]|max_length[50]|valid_email',
