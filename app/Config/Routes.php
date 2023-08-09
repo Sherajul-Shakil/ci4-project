@@ -39,6 +39,12 @@ $routes->get('logout', 'User::logout');
 $routes->get("list-products", "DataController::listProducts");
 $routes->get("list-users", "DataController::listUsers");
 
+// sql stored procedure
+$routes->get("list-user", "DataController::listUser");
+$routes->get("single-user/(:num)", "DataController::singleUser/$1");
+
+
+
 
 /*
  * --------------------------------------------------------------------

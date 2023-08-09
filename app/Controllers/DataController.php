@@ -12,6 +12,12 @@ class DataController extends BaseController
 {
     use DataTrait;
 
+    public function __construct()
+    {
+        // Loading db instance
+        $this->db = db_connect();
+    }
+
     public function listProducts()
     {
         // Get data using Trait method
@@ -28,5 +34,27 @@ class DataController extends BaseController
 
         echo "<pre>";
         print_r($users);
+    }
+
+    // sql stored procedure
+    public function listUser()
+    {
+        $users = $this->db->query("CALL getUser()")->getResult();
+
+        echo "<pre>";
+        print_r($users);
+    }
+
+    public function singleUser($id = null)
+    {
+        if ($id === null) {
+            echo "Please provide a user ID.";
+            return;
+        }
+
+        $single_user = $this->db->query("CALL getSingleUser(" . $id . ")")->getRow();
+
+        echo "<pre>";
+        print_r($single_user);
     }
 }
