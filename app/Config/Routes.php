@@ -35,6 +35,10 @@ $routes->get('dashboard', 'Dashboard::index', ['filter' => 'auth']);
 $routes->get('profile', 'User::profile', ['filter' => 'auth']);
 $routes->get('logout', 'User::logout');
 
+//Trait
+$routes->get("list-products", "DataController::listProducts");
+$routes->get("list-users", "DataController::listUsers");
+
 
 /*
  * --------------------------------------------------------------------
